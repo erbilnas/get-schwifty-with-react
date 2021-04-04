@@ -37,7 +37,7 @@ const Popup = (props) => {
                     return -1
                 } else return 0
             })
-        } else console.error("Sorting error!")
+        }
     } catch (error) {
         console.error("Loading popup...")
     }

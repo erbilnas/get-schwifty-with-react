@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
+  NavLink,
+  Redirect
 } from "react-router-dom"
 import Home from "./pages/Home"
 import Episodes from "./pages/Episodes"
@@ -17,7 +18,7 @@ function App() {
   return (
     <Router>
       <Navbar bg="navbar" variant="dark">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <img
             alt="appIcon"
             src={appIcon}
@@ -32,9 +33,10 @@ function App() {
         </Nav>
       </Navbar>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/episodes" component={Episodes} />
         <Route exact path="/characters" component={Characters} />
+        <Redirect from="/" to="/home" />
       </Switch>
     </Router>
   );
